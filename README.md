@@ -14,13 +14,13 @@ To help you best cut the cake, you have turned the sequence of colors of the M&M
 
 Write a function called solution(s) that, given a non-empty string less than 200 characters in length describing the sequence of M&Ms, returns the maximum number of equal parts that can be cut from the cake without leaving any leftovers.
 
-Languages
+****Languages
 ===========
 
 To provide a Python solution, edit solution.py
 To provide a Java solution, edit Solution.java
 
-Test Cases
+****Test Cases
 =============
 
 Your code should pass the following test cases.
