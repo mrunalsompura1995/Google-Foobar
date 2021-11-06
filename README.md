@@ -14,14 +14,15 @@ To help you best cut the cake, you have turned the sequence of colors of the M&M
 
 Write a function called solution(s) that, given a non-empty string less than 200 characters in length describing the sequence of M&Ms, returns the maximum number of equal parts that can be cut from the cake without leaving any leftovers.
 
-Languages
-=========
+# Languages
+===========
 
 To provide a Python solution, edit solution.py
 To provide a Java solution, edit Solution.java
 
-Test cases
-==========
+# Test Cases
+=============
+
 Your code should pass the following test cases.
 Note that it may also be run against hidden test cases not shown here.
 
@@ -50,15 +51,14 @@ Given a list of distinct positive integers named pegs representing the location 
 For example, if the pegs are placed at [4, 30, 50], then the first gear could have a radius of 12, the second gear could have a radius of 14, and the last one a radius of 6. Thus, the last gear would rotate twice as fast as the first one. In this case, pegs would be [4, 30, 50] and solution(pegs) should return [12, 1].
 
 The list pegs will be given sorted in ascending order and will contain at least 2 and no more than 20 distinct positive integers, all between 1 and 10000 inclusive.
+# Languages
+===========
 
-Languages
-=========
-
-To provide a Java solution, edit Solution.java
 To provide a Python solution, edit solution.py
+To provide a Java solution, edit Solution.java
 
-Test cases
-==========
+# Test Cases
+=============
 Your code should pass the following test cases.
 Note that it may also be run against hidden test cases not shown here.
 
@@ -98,14 +98,14 @@ Each hallway string will contain three different types of characters: '>', an em
 
 Write a function solution(s) which takes a string representing employees walking along a hallway and returns the number of times the employees will salute. s will contain at least 1 and at most 100 characters, each one of -, >, or <.
 
-Languages
-=========
+# Languages
+===========
 
 To provide a Python solution, edit solution.py
 To provide a Java solution, edit Solution.java
 
-Test cases
-==========
+# Test Cases
+=============
 Your code should pass the following test cases.
 Note that it may also be run against hidden test cases not shown here.
 
@@ -159,8 +159,14 @@ All worker IDs (including the first worker) are between 0 and 2000000000 inclusi
 
 With this information, write a function answer(start, length) that will cover for the missing security checkpoint by outputting the same checksum the guards would normally submit before lunch. You have just enough time to find out the ID of the first worker to be checked (start) and the length of the line (length) before the automatic review occurs, so your program must generate the proper checksum with just those two values.
 
-Test cases
-==========
+# Languages
+===========
+
+To provide a Python solution, edit solution.py
+To provide a Java solution, edit Solution.java
+
+# Test Cases
+=============
 
 Inputs:
     (int) start = 0
@@ -202,14 +208,14 @@ You have maps of parts of the space station, each starting at a work area exit a
 
 Write a function solution(map) that generates the length of the shortest path from the station door to the escape pod, where you are allowed to remove one wall as part of your remodeling plans. The path length is the total number of nodes you pass through, counting both the entrance and exit nodes. The starting and ending positions are always passable (0). The map will always be solvable, though you may or may not need to remove a wall. The height and width of the map can be from 2 to 20. Moves can only be made in cardinal directions; no diagonal moves are allowed.
 
-Languages
-=========
+# Languages
+===========
 
 To provide a Python solution, edit solution.py
 To provide a Java solution, edit Solution.java
 
-Test cases
-==========
+# Test Cases
+=============
 Your code should pass the following test cases.
 Note that it may also be run against hidden test cases not shown here.
 
@@ -270,14 +276,14 @@ Start End Delta Time Status
 
 With this solution, you would pick up bunnies 1 and 2. This is the best combination for this space station hallway, so the answer is [1, 2].
 
-Languages
-=========
+# Languages
+===========
 
 To provide a Python solution, edit solution.py
-To provide a Java solution, edit solution.java
+To provide a Java solution, edit Solution.java
 
-Test cases
-==========
+# Test Cases
+=============
 
 Inputs:
     (int) times = [
@@ -317,15 +323,14 @@ Write a function solution(dimensions, your_position, trainer_position, distance)
 The room has integer dimensions [1 < x_dim <= 1250, 1 < y_dim <= 1250]. You and the elite trainer are both positioned on the integer lattice at different distinct positions (x, y) inside the room such that [0 < x < x_dim, 0 < y < y_dim]. Finally, the maximum distance that the beam can travel before becoming harmless will be given as an integer 1 < distance <= 10000.
 
 For example, if you and the elite trainer were positioned in a room with dimensions [3, 2], your_position [1, 1], trainer_position [2, 1], and a maximum shot distance of 4, you could shoot in seven different directions to hit the elite trainer (given as vector bearings from your location): [1, 0], [1, 2], [1, -2], [3, 2], [3, -2], [-3, 2], and [-3, -2]. As specific examples, the shot at bearing [1, 0] is the straight line horizontal shot of distance 1, the shot at bearing [-3, -2] bounces off the left wall and then the bottom wall before hitting the elite trainer with a total shot distance of sqrt(13), and the shot at bearing [1, 2] bounces off just the top wall before hitting the elite trainer with a total shot distance of sqrt(5).
+# Languages
+===========
 
-Languages
-=========
-
-To provide a Java solution, edit Solution.java
 To provide a Python solution, edit solution.py
+To provide a Java solution, edit Solution.java
 
-Test cases
-==========
+# Test Cases
+=============
 Your code should pass the following test cases.
 Note that it may also be run against hidden test cases not shown here.
 
