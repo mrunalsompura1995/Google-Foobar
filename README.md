@@ -14,13 +14,13 @@ To help you best cut the cake, you have turned the sequence of colors of the M&M
 
 Write a function called solution(s) that, given a non-empty string less than 200 characters in length describing the sequence of M&Ms, returns the maximum number of equal parts that can be cut from the cake without leaving any leftovers.
 
-#### Languages
+Languages
 ===========
 
 To provide a Python solution, edit solution.py
 To provide a Java solution, edit Solution.java
 
-#### Test Cases
+Test Cases
 =============
 
 Your code should pass the following test cases.
@@ -51,13 +51,14 @@ Given a list of distinct positive integers named pegs representing the location 
 For example, if the pegs are placed at [4, 30, 50], then the first gear could have a radius of 12, the second gear could have a radius of 14, and the last one a radius of 6. Thus, the last gear would rotate twice as fast as the first one. In this case, pegs would be [4, 30, 50] and solution(pegs) should return [12, 1].
 
 The list pegs will be given sorted in ascending order and will contain at least 2 and no more than 20 distinct positive integers, all between 1 and 10000 inclusive.
-#### Languages
+
+Languages
 ===========
 
 To provide a Python solution, edit solution.py
 To provide a Java solution, edit Solution.java
 
-#### Test Cases
+Test Cases
 =============
 Your code should pass the following test cases.
 Note that it may also be run against hidden test cases not shown here.
