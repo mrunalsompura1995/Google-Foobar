@@ -20,20 +20,20 @@ def solution(dimensions, your_position, trainer_position, distance):
     return len([1 for travel in hits.values() if travel > 0])
 
 
-dimensions = [3,3]
-your_position = [1,1]
-trainer_position = [2,2]
-distance = 5
+# dimensions = [3,3]
+# your_position = [1,1]
+# trainer_position = [2,2]
+# distance = 10
 
 # dimensions = [2,5]
 # your_position = [1,2]
 # trainer_position = [1,4]
-# distance = 5
+# distance = 10
 
 # dimensions = [3, 2]
 # your_position = [1, 1]
 # trainer_position = [2, 1]
-# distance = 4
+# distance = 100
 
 # dimensions = [300, 275]
 # your_position = [150, 150]
@@ -44,4 +44,15 @@ distance = 5
 # captain_position = [6, 4]
 # badguy_position = [3,2]
 # distance = 23
+
+# dimensions = [9,9]
+# your_position = [3,3]
+# trainer_position = [6,6]
+# distance = 15
+
+dimensions = [10,10]
+your_position = [2,7]
+trainer_position = [9,9]
+distance = 60
+
 print(solution(dimensions, your_position, trainer_position, distance))

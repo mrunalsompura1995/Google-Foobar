@@ -3,24 +3,33 @@ def solution(dimensions, your_position, trainer_position, distance):
     w,h = dimensions
     x0,y0 = your_position
     x,y = trainer_position
-
     def checkCorner(candidate):
         slope = 0
         if x - x0 != 0:
             slope = abs(y - y0) / abs(x - x0)
         x1,y1 = candidate
-        if candidate == trainer_position:
+        if (x1,y1) == (x,y):
             return True
         corner = (y1-y0) == slope * (x1 - x0)
-        between = ((min(x0, x1) < x < max(x0, x1)) or (min(y0, y1) < y < max(y0, y1))) or ((min(x, x1) < x0 < max(x, x1)) or (min(y, y1) < y0 < max(y, y1))) 
-        if corner and between:
+        if corner == True:
+            return False
+        # wall_corners = [(0,0),(w,h),(w,0),(0,h)]
+        # for i in wall_corners:
+        #     p,q = i
+        #     corner = (q - y1) == slope * (p - x1)
+        #     if corner == True:
+        #         return False
+        a = checkDistance(your_position,candidate) 
+        b = checkDistance(your_position,trainer_position)
+        c = checkDistance(candidate,trainer_position)
+        if b + c == a or a+ b == c:
             return False
         return True
 
-    def checkDistance(candidate):
-        m,n = candidate 
-        d = (abs(m - x0) ** 2 + abs(n - y0) ** 2) ** 0.5
-        return d
+    def checkDistance(point1,point2):
+        x1,y1 = point1
+        x2,y2 = point2
+        return (abs(x2 - x1)** 2 + abs(y2 - y1)** 2)** 0.5
 
     def flattenNestedList(nestedList):
         flatList = []
@@ -31,14 +40,28 @@ def solution(dimensions, your_position, trainer_position, distance):
                 flatList.append(elem)    
         return flatList
 
-    pos = [[[(i,j),(i,-j),(-i,j),(-i,-j)] for i in range(x,2*distance,(w-x)*2) if i % 6 != 0] for j in range(y,2*distance,(h-y)*2) if j % 6 !=0]
+    posX = []
+    posY = []
+    for i in range(10):
+        if i % 2 != 0:
+            posx += 2*(w-x)
+            posy += 2*(h-y)
+        else:
+            if i == 0:
+                posx = x
+                posy = y
+            else:
+                posx += 2*x
+                posy += 2*y
+        posX.append(posx)
+        posY.append(posy)
+
+    pos = [[[(i,j),(i,-j),(-i,j),(-i,-j)] for i in posX] for j in posY]
     candidate = flattenNestedList(pos)
     for i in candidate:
-        if checkDistance(i) < distance and checkCorner(i):
-            print(i)
+        if checkDistance(i,your_position) <= distance and checkCorner(i):
             count+=1
     return count
-
 
 # dimensions = [3,3]
 # your_position = [1,1]
@@ -48,17 +71,27 @@ def solution(dimensions, your_position, trainer_position, distance):
 # dimensions = [2,5]
 # your_position = [1,2]
 # trainer_position = [1,4]
-# distance = 4
+# distance = 10
 
-dimensions = [3, 2]
-your_position = [1, 1]
-trainer_position = [2, 1]
-distance = 4
+# dimensions = [3, 2]
+# your_position = [1, 1]
+# trainer_position = [2, 1]
+# distance = 100
 
 # dimensions = [300, 275]
 # your_position = [150, 150]
 # trainer_position = [180, 100]
 # distance = 500
+
+# dimensions = [9,9]
+# your_position = [3,3]
+# trainer_position = [6,6]
+# distance = 15
+
+dimensions = [10,10]
+your_position = [2,7]
+trainer_position = [9,9]
+distance = 60
 
 print(solution(dimensions,your_position,trainer_position,distance))
     
