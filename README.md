@@ -1,9 +1,9 @@
-#### Google.Foobar
+# Google.Foobar
 Solutions to Google Foobar challenges
 
-### Level 1:
+## Level 1:
 
-## Challenge 1:The cake is not a lie!
+### Challenge 1:The cake is not a lie!
 ======================
 
 Commander Lambda has had an incredibly successful week: the first test of the LAMBCHOP doomsday device was completed AND Lambda set a new personal high score in Tetris. To celebrate, the Commander ordered cake for everyone -- even the lowliest of minions! But competition among minions is fierce, and if you don't cut exactly equal slices of cake for everyone you'll get in big trouble. 
@@ -14,13 +14,13 @@ To help you best cut the cake, you have turned the sequence of colors of the M&M
 
 Write a function called solution(s) that, given a non-empty string less than 200 characters in length describing the sequence of M&Ms, returns the maximum number of equal parts that can be cut from the cake without leaving any leftovers.
 
-# Languages
+#### Languages
 ===========
 
 To provide a Python solution, edit solution.py
 To provide a Java solution, edit Solution.java
 
-# Test Cases
+#### Test Cases
 =============
 
 Your code should pass the following test cases.
@@ -37,9 +37,9 @@ solution.solution("abccbaabccba")
 Output:
     2
   
-### Level 2:
+## Level 2:
 
-## Challenge 2.1: Gearing Up for Destruction
+### Challenge 2.1: Gearing Up for Destruction
 ==========================
 
 As Commander Lambda's personal assistant, you've been assigned the task of configuring the LAMBCHOP doomsday device's axial orientation gears. It should be pretty simple -- just add gears to create the appropriate rotation ratio. But the problem is, due to the layout of the LAMBCHOP and the complicated system of beams and pipes supporting it, the pegs that will support the gears are fixed in place.
@@ -51,13 +51,13 @@ Given a list of distinct positive integers named pegs representing the location 
 For example, if the pegs are placed at [4, 30, 50], then the first gear could have a radius of 12, the second gear could have a radius of 14, and the last one a radius of 6. Thus, the last gear would rotate twice as fast as the first one. In this case, pegs would be [4, 30, 50] and solution(pegs) should return [12, 1].
 
 The list pegs will be given sorted in ascending order and will contain at least 2 and no more than 20 distinct positive integers, all between 1 and 10000 inclusive.
-# Languages
+#### Languages
 ===========
 
 To provide a Python solution, edit solution.py
 To provide a Java solution, edit Solution.java
 
-# Test Cases
+#### Test Cases
 =============
 Your code should pass the following test cases.
 Note that it may also be run against hidden test cases not shown here.
@@ -84,7 +84,7 @@ solution.solution([4, 17, 50])
 Output:
     -1,-1
  
-## Challenge 2.2: En Route Salute
+### Challenge 2.2: En Route Salute
 ===============
 
 Commander Lambda loves efficiency and hates anything that wastes time. The Commander is a busy lamb, after all! Henchmen who identify sources of inefficiency and come up with ways to remove them are generously rewarded. You've spotted one such source, and you think solving it will help you build the reputation you need to get promoted.
@@ -98,13 +98,13 @@ Each hallway string will contain three different types of characters: '>', an em
 
 Write a function solution(s) which takes a string representing employees walking along a hallway and returns the number of times the employees will salute. s will contain at least 1 and at most 100 characters, each one of -, >, or <.
 
-# Languages
+#### Languages
 ===========
 
 To provide a Python solution, edit solution.py
 To provide a Java solution, edit Solution.java
 
-# Test Cases
+#### Test Cases
 =============
 Your code should pass the following test cases.
 Note that it may also be run against hidden test cases not shown here.
@@ -133,9 +133,9 @@ Output:
 
 Use verify [file] to test your solution and see how it does. When you are finished editing your code, use submit [file] to submit your answer. If your solution passes the test cases, it will be removed from your home folder.
 
-### Level 3:
+## Level 3:
 
-## Challenge 3.1: Queue To Do
+### Challenge 3.1: Queue To Do
 ===========
 
 You're almost ready to make your move to destroy the LAMBCHOP doomsday device, but the security checkpoints that guard the underlying systems of the LAMBCHOP are going to be a problem. You were able to take one down without tripping any alarms, which is great! Except that as Commander Lambda's assistant, you've learned that the checkpoints are about to come under automated review, which means that your sabotage will be discovered and your cover blown - unless you can trick the automated review system.
@@ -159,13 +159,13 @@ All worker IDs (including the first worker) are between 0 and 2000000000 inclusi
 
 With this information, write a function answer(start, length) that will cover for the missing security checkpoint by outputting the same checksum the guards would normally submit before lunch. You have just enough time to find out the ID of the first worker to be checked (start) and the length of the line (length) before the automatic review occurs, so your program must generate the proper checksum with just those two values.
 
-# Languages
+#### Languages
 ===========
 
 To provide a Python solution, edit solution.py
 To provide a Java solution, edit Solution.java
 
-# Test Cases
+#### Test Cases
 =============
 
 Inputs:
@@ -180,7 +180,7 @@ Inputs:
 Output:
     (int) 14
     
-## Challenge 3.2: Fuel Injection Perfection
+### Challenge 3.2: Fuel Injection Perfection
 ===========================
 
 Commander Lambda has asked for your help to refine the automatic quantum antimatter fuel injection system for her LAMBCHOP doomsday device. It's a great chance for you to get a closer look at the LAMBCHOP - and maybe sneak in a bit of sabotage while you're at it - so you took the job gladly.
@@ -199,7 +199,7 @@ For example:
 answer(4) returns 2: 4 -> 2 -> 1  
 answer(15) returns 5: 15 -> 16 -> 8 -> 4 -> 2 -> 1
 
-## Challenge 3.3: Prepare the Bunnies' Escape
+### Challenge 3.3: Prepare the Bunnies' Escape
 ===========================
 
 You're awfully close to destroying the LAMBCHOP doomsday device and freeing Commander Lambda's bunny workers, but once they're free of the work duties the bunnies are going to need to escape Lambda's space station via the escape pods as quickly as possible. Unfortunately, the halls of the space station are a maze of corridors and dead ends that will be a deathtrap for the escaping bunnies. Fortunately, Commander Lambda has put you in charge of a remodeling project that will give you the opportunity to make things a little easier for the bunnies. Unfortunately (again), you can't just remove all obstacles between the bunnies and the escape pods - at most you can remove one wall per escape pod path, both to maintain structural integrity of the station and to avoid arousing Commander Lambda's suspicions. 
@@ -208,13 +208,13 @@ You have maps of parts of the space station, each starting at a work area exit a
 
 Write a function solution(map) that generates the length of the shortest path from the station door to the escape pod, where you are allowed to remove one wall as part of your remodeling plans. The path length is the total number of nodes you pass through, counting both the entrance and exit nodes. The starting and ending positions are always passable (0). The map will always be solvable, though you may or may not need to remove a wall. The height and width of the map can be from 2 to 20. Moves can only be made in cardinal directions; no diagonal moves are allowed.
 
-# Languages
+#### Languages
 ===========
 
 To provide a Python solution, edit solution.py
 To provide a Java solution, edit Solution.java
 
-# Test Cases
+#### Test Cases
 =============
 Your code should pass the following test cases.
 Note that it may also be run against hidden test cases not shown here.
@@ -243,9 +243,9 @@ Output:
 
 Use verify [file] to test your solution and see how it does. When you are finished editing your code, use submit [file] to submit your answer. If your solution passes the test cases, it will be removed from your home folder.
 
-### Level 4:
+## Level 4:
 
-## Challenge 4.1: Running with Bunnies
+### Challenge 4.1: Running with Bunnies
 ====================
 
 You and your rescued bunny prisoners need to get out of this collapsing death trap of a space station - and fast! Unfortunately, some of the bunnies have been weakened by their long imprisonment and can't run very fast. Their friends are trying to help them, but this escape would go a lot faster if you also pitched in. The defensive bulkhead doors have begun to close, and if you don't make it through in time, you'll be trapped! You need to grab as many bunnies as you can and get through the bulkheads before they close. 
@@ -276,13 +276,13 @@ Start End Delta Time Status
 
 With this solution, you would pick up bunnies 1 and 2. This is the best combination for this space station hallway, so the answer is [1, 2].
 
-# Languages
+#### Languages
 ===========
 
 To provide a Python solution, edit solution.py
 To provide a Java solution, edit Solution.java
 
-# Test Cases
+#### Test Cases
 =============
 
 Inputs:
@@ -311,7 +311,7 @@ Output:
 
 Use verify [file] to test your solution and see how it does. When you are finished editing your code, use submit [file] to submit your answer. If your solution passes the test cases, it will be removed from your home folder.
 
-## Challenge 4.2: Bringing a Gun to a Trainer Fight
+### Challenge 4.2: Bringing a Gun to a Trainer Fight
 =================================
 
 Uh-oh -- you've been cornered by one of Commander Lambdas elite bunny trainers! Fortunately, you grabbed a beam weapon from an abandoned storeroom while you were running through the station, so you have a chance to fight your way out. But the beam weapon is potentially dangerous to you as well as to the bunny trainers: its beams reflect off walls, meaning you'll have to be very careful where you shoot to avoid bouncing a shot toward yourself!
@@ -323,13 +323,13 @@ Write a function solution(dimensions, your_position, trainer_position, distance)
 The room has integer dimensions [1 < x_dim <= 1250, 1 < y_dim <= 1250]. You and the elite trainer are both positioned on the integer lattice at different distinct positions (x, y) inside the room such that [0 < x < x_dim, 0 < y < y_dim]. Finally, the maximum distance that the beam can travel before becoming harmless will be given as an integer 1 < distance <= 10000.
 
 For example, if you and the elite trainer were positioned in a room with dimensions [3, 2], your_position [1, 1], trainer_position [2, 1], and a maximum shot distance of 4, you could shoot in seven different directions to hit the elite trainer (given as vector bearings from your location): [1, 0], [1, 2], [1, -2], [3, 2], [3, -2], [-3, 2], and [-3, -2]. As specific examples, the shot at bearing [1, 0] is the straight line horizontal shot of distance 1, the shot at bearing [-3, -2] bounces off the left wall and then the bottom wall before hitting the elite trainer with a total shot distance of sqrt(13), and the shot at bearing [1, 2] bounces off just the top wall before hitting the elite trainer with a total shot distance of sqrt(5).
-# Languages
+#### Languages
 ===========
 
 To provide a Python solution, edit solution.py
 To provide a Java solution, edit Solution.java
 
-# Test Cases
+#### Test Cases
 =============
 Your code should pass the following test cases.
 Note that it may also be run against hidden test cases not shown here.
