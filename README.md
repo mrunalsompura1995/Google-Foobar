@@ -3,7 +3,7 @@ Solutions in python to Google Foobar challenges
 
 # Table of Contents:
 
-- [Level 1](## Level 1)
+- [Level 1](Level 1)
         -[Challenge 1:The cake is not a lie!]() 
 - [Level 2](level-2)
         -[Challenge 2.1: Gearing Up for Destruction]()   
