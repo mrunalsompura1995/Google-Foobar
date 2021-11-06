@@ -19,25 +19,26 @@ def solution(dimensions, your_position, trainer_position, distance):
                 hits[bearing] = travel * (-1 if position == your_position else 1)
     return len([1 for travel in hits.values() if travel > 0])
 
+
 dimensions = [3,3]
 your_position = [1,1]
 trainer_position = [2,2]
 distance = 5
 
+# dimensions = [2,5]
+# your_position = [1,2]
+# trainer_position = [1,4]
+# distance = 5
+
 # dimensions = [3, 2]
-# captain_position = [1, 1]
-# badguy_position = [2, 1]
+# your_position = [1, 1]
+# trainer_position = [2, 1]
 # distance = 4
 
 # dimensions = [300, 275]
-# captain_position = [150, 150]
-# badguy_position = [180, 100]
+# your_position = [150, 150]
+# trainer_position = [180, 100]
 # distance = 500
-
-dimensions = [2,5]
-captain_position = [1,2]
-badguy_position = [1,4]
-distance = 4
 
 # dimensions = [23,10]
 # captain_position = [6, 4]
