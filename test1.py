@@ -23,15 +23,15 @@ def solution(dimensions, your_position, trainer_position, distance):
     return len([1 for travel in hits.values() if travel > 0])
 
 
-# dimensions = [3,3]
-# your_position = [1,1]
-# trainer_position = [2,2]
-# distance = 10
+dimensions = [3,3]
+your_position = [1,1]
+trainer_position = [2,2]
+distance = 10
 
-dimensions = [2,5]
-your_position = [1,2]
-trainer_position = [1,4]
-distance = 100
+# dimensions = [2,5]
+# your_position = [1,2]
+# trainer_position = [1,4]
+# distance = 100
 
 
 # dimensions = [3, 2]

@@ -25,8 +25,8 @@ def solution(dimensions, your_position, trainer_position, distance):
     x0,y0 = your_position
     x,y = trainer_position
 
-    posX, posY  = [x],[y]
-    posx, posy= x,y
+    posX, posY , posX0, posY0 = [x],[y],[x0],[y0]
+    posx, posy, posx0, posy0 = x,y,x0,y0
     candidate, yourpos = [],[]
     
     n = max(w,h,distance)
@@ -35,20 +35,26 @@ def solution(dimensions, your_position, trainer_position, distance):
             if r % 2 != 0:
                 posx += 2*x
                 posy += 2*y
+                posx0 += 2*x0 
+                posy0 += 2*y0
             else:
                 posx += 2*(w-x)
                 posy += 2*(h-y)
+                posx0 += 2*(w-x0)
+                posy0 += 2*(h-y0)
             posX.append(posx)
             posY.append(posy)
+            posX0.append(posx0)
+            posY0.append(posy0)
 
     trainer = [[candidate.extend(((i,j),(i,-j),(-i,j),(-i,-j))) for i in posX] for j in posY]
-    you = [[yourpos.extend(((i-(x-x0),j-(y-y0)),(i-(x-x0),-j+(y-y0)),(-i+(x-x0),j-(y-y0)),(-i+(x-x0),-j+(y-y0)))) for i in posX] for j in posY]
+    you = [[yourpos.extend(((i,j),(i,-j),(-i,j),(-i,-j))) for i in posX0] for j in posY0]
     newlist = []
 
     for i in range(len(candidate)):
         newlist.append(candidate[i])
         newlist.append(yourpos[i])
-
+    print(newlist)
     selected_cand = []
     for cand in newlist:
         if 0 < checkDistAngle(cand,your_position)[0] <= distance:
@@ -63,18 +69,20 @@ def solution(dimensions, your_position, trainer_position, distance):
             HitAngle.append(ang)
             HitList.append(can)
             if can in candidate:
+                # print(can)
                 count+=1
+
     return count
 
-# dimensions = [3,3]
-# your_position = [1,1]
-# trainer_position = [2,2]
-# distance = 15
+dimensions = [3,3]
+your_position = [1,1]
+trainer_position = [2,2]
+distance = 10
 
-dimensions = [2,5]
-your_position = [1,2]
-trainer_position = [1,4]
-distance = 100
+# dimensions = [2,5]
+# your_position = [1,2]
+# trainer_position = [1,4]
+# distance = 100
 
 # dimensions = [3, 2]
 # your_position = [1, 1]
