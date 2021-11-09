@@ -1,4 +1,9 @@
 import math
+import time
+
+def current_milli_time():
+    return round(time.time() * 1000)
+
 def checkBetween(a,b,c):
     ac,bc,ab = checkDistAngle(a,b)[0] ,checkDistAngle(b,c)[0] , checkDistAngle(a,c)[0]
     if ac + bc - ab < 0.0000001:
@@ -54,7 +59,6 @@ def solution(dimensions, your_position, trainer_position, distance):
     for i in range(len(candidate)):
         newlist.append(candidate[i])
         newlist.append(yourpos[i])
-    print(newlist)
     selected_cand = []
     for cand in newlist:
         if 0 < checkDistAngle(cand,your_position)[0] <= distance:
@@ -69,34 +73,50 @@ def solution(dimensions, your_position, trainer_position, distance):
             HitAngle.append(ang)
             HitList.append(can)
             if can in candidate:
-                # print(can)
                 count+=1
-
     return count
 
-dimensions = [3,3]
-your_position = [1,1]
-trainer_position = [2,2]
-distance = 10
+from math import atan2
+from itertools import product
+
+def solutions(dimensions, your_position, trainer_position, distance):
+    x0, y0 = your_position
+    hits = dict()
+    for position in your_position, trainer_position:
+        # print('p',position)
+        for reflect in product(*[range(-(distance // -d) + 1) for d in dimensions]):
+            # print(reflect)
+            for quadrant in [(1, 1), (-1, 1), (-1, -1), (1, -1)]:
+                x, y = [
+                    (d * r + (d - p if r % 2 else p)) * q
+                    for d, p, r, q in zip(dimensions, position, reflect, quadrant)
+                ]
+                # print(x,y)
+                travel = (abs(x - x0) ** 2 + abs(y - y0) ** 2) ** 0.5
+                bearing = atan2(x0 - x, y0 - y)
+                if travel > distance or bearing in hits and travel > abs(hits[bearing]):
+                    continue
+                # mark self-hits with a negative travel so we can filter later
+                hits[bearing] = travel * (-1 if position == your_position else 1)
+    return len([1 for travel in hits.values() if travel > 0])
+# dimensions = [3,3]
+# your_position = [1,1]
+# trainer_position = [2,2]
+# distance = 10
 
 # dimensions = [2,5]
 # your_position = [1,2]
 # trainer_position = [1,4]
 # distance = 100
 
-# dimensions = [3, 2]
-# your_position = [1, 1]
-# trainer_position = [2, 1]
-# distance = 4
-
 # dimensions = [300, 275]
 # your_position = [150, 150]
 # trainer_position = [180, 100]
 # distance = 500
 
-# dimensions = [9,9]
-# your_position = [3,3]
-# trainer_position = [6,6]
+dimensions = [9,9]
+your_position = [3,3]
+trainer_position = [6,6]
 # distance = 10
 
 # dimensions = [10,10]
@@ -104,5 +124,22 @@ distance = 10
 # trainer_position = [9,9]
 # distance = 60
 
-print(solution(dimensions,your_position,trainer_position,distance))
+# dimensions = [23,10]
+# your_position = [6, 4]
+# trainer_position = [3,2]
+# distance = 23
 
+# dimensions = [3, 2]
+# your_position = [1, 1]
+# trainer_position = [2, 1]
+for d in range(100):
+    distance = d
+    t1 = current_milli_time()
+    test = solution(dimensions,your_position,trainer_position,d)
+    t2 = current_milli_time()
+    soln = solutions(dimensions,your_position,trainer_position,d)
+    t3 = current_milli_time()
+    print('d',d,'test',test,'time',t2-t1,'soln',soln,'time',t3-t2)
+    if test != soln:
+        print('Error at ', d)
+        break
