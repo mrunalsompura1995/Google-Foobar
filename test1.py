@@ -31,7 +31,7 @@ def solution(dimensions, your_position, trainer_position, distance):
 dimensions = [2,5]
 your_position = [1,2]
 trainer_position = [1,4]
-distance = 11
+distance = 100
 
 
 # dimensions = [3, 2]
