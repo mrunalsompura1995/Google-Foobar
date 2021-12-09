@@ -25,20 +25,14 @@ PRESTATES = {
 
 def col_preimg_generator(c1, c2):
     for pre_c1 in c1:
-        # print('c1',pre_c1)
         for pre_c2 in c2:
-            # print('c2',pre_c2)
             if pre_c1[-1] == pre_c2[0]:
                 yield tuple(pre_c1)+(pre_c2[1],)
 
 def get_col_preimages(col):
     preimages = PRESTATES[col[0]]
-    # print(preimages)
     for _, cell in filter(lambda k: k[0]>0, enumerate(col)):
         preimages = col_preimg_generator(preimages, PRESTATES[cell])
-        print(preimages)
-        # for p in preimages:
-        #     print(p)  
     return tuple([tuple(zip(*pre)) for pre in preimages])
 
 def solution(g):
