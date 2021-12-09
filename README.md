@@ -1,16 +1,6 @@
 # Google.Foobar
 Solutions in python to Google Foobar challenges
 
-# Table of Contents:
-
-- [Level 1](level-1)
-        -[Challenge 1:The cake is not a lie!]() 
-- [Level 2](level-2)
-        -[Challenge 2.1: Gearing Up for Destruction]()   
-- [Level 3](level-3)
-- [Level 4](level-4)
-- [Level 5](level-5)
-
 # Constraints
 
 ## Java
